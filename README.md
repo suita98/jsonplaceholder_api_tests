@@ -1,1 +1,1 @@
-# jsonplaceholder_api_tests
+Pytest project for jsonplaceholder API
