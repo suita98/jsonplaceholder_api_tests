@@ -1,11 +1,12 @@
 from jsonschema import validate
 from hamcrest import assert_that, has_length, only_contains
+from requests import status_codes
 
 
 def smoke_checker(func):
     def wrapper_smoke_checker(*args, **kwargs):
         response, schema = func(*args, **kwargs)
-        assert response.status_code == 200
+        assert response.status_code == status_codes.codes.ok
         validate(instance=response.json(), schema=schema)
     return wrapper_smoke_checker
 

@@ -15,9 +15,7 @@ def test_get_total_posts_count():
 
 
 @pytest.mark.parametrize('parameter, values',
-                        [('userId', list(range(1, 10))),
-                         ('id', list(range(1, 100))),
-                         ('title', POST_TITLES)])
+                        [('userId', list(range(1, 10))), ('id', list(range(1, 100))), ('title', POST_TITLES)])
 def test_get_posts_by(parameter, values):
     expected_value = choice(values)
     params = {parameter: expected_value}
