@@ -1,3 +1,9 @@
 TOTAL_POSTS_NUMBER = 100
 
-USER_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+POST_TITLES = [
+    'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+    'et ea vero quia laudantium autem',
+    'doloribus ad provident suscipit at',
+    'ullam ut quidem id aut vel consequuntur',
+    'enim quo cumque'
+]
