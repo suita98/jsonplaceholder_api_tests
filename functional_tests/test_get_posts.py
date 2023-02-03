@@ -10,6 +10,8 @@ api = ApiClient()
 
 
 def test_get_total_posts_count():
+    # TOTAL_POSTS_NUMBER should be replaced with number of posts received from DB
+    
     response = api.get_posts()
     check_list_items_count(response.json(), TOTAL_POSTS_NUMBER)
 
@@ -21,3 +23,15 @@ def test_get_posts_by(parameter, values):
     params = {parameter: expected_value}
     response = api.get_posts(params=params)
     check_post_by(parameter, expected_value, response.json())
+
+
+def test_get_posts_by_all_existing_parameters():
+    pass
+
+
+def test_get_posts_by_not_existing_parameter():
+    pass
+
+
+def test_get_posts_by_parameter_with_not_existing_value():
+    pass
