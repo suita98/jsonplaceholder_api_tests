@@ -1,18 +1,11 @@
-import requests
-from jsonschema import validate
-
-response_schema = {
-    'type' : 'object',
-    'properties' : {
-        'userId': {'type': 'number'},
-        'id': {'type': 'number'},
-        'title': {'type': 'string'},
-        'body': {'type': 'string'},
-    }
-}
+from api_client.jsonplaceholder_api import ApiClient
+from framework.checker import smoke_checker
 
 
+api = ApiClient()
+
+
+@smoke_checker
 def test_get_posts():
-    response = requests.get('https://jsonplaceholder.typicode.com/posts')
-    assert response.status_code == 200
-    validate(instance=response.json()[0], schema=response_schema)
+    response = api.get_posts()
+    return response
